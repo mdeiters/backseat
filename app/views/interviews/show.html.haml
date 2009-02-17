@@ -1,0 +1,16 @@
+.interview{:id => dom_id(@interview)}
+  =@interview.question
+  -@interview.options.each do |option|
+    #option{:id => dom_id(option)}= option.name
+  .responses
+    - if @interview.responses.empty?
+      %p There are no responses to this question yet
+    - else
+      %table
+        %tr
+          %th='User'
+          %th='Response'
+          %th='Comment'
+        =render :partial => @interview.responses
+  =link_to 'Edit', edit_interview_path(@interview)
+  =link_to 'Back', :back
