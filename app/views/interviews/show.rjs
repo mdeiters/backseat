@@ -1,0 +1,9 @@
+case params[:mode]
+  when 'image'
+    @html = link_to_remote(image_tag('http://localhost:3000/images/user_feedback.png'), 
+                               :url => new_interview_response_url(@interview),
+                               :method => :get)
+    page << "document.write(#{@html})"
+  when 'inline'
+    page.insert_html :top, "interview-#{params[:id]}", :partial => 'responses/form'
+end                        

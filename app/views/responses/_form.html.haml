@@ -1,0 +1,18 @@
+%response
+  .welcome= "Tell us what you think #{params[:user]}" if params[:user]
+  .question= "#{@interview.question} ?"
+  .description= @interview.description unless @interview.description.blank?
+  -form_for [@interview, Response.new] do |form|
+    = hidden_field_tag :interview_id, @interview.id
+    = hidden_field_tag 'response[user]', params[:user]
+    - unless @interview.options.empty?
+      %fieldset
+        -@interview.options.each do |option|
+          #option{:id => dom_id(option)}
+            =option.name
+            =form.radio_button :value, option.name
+    %fieldset
+      = form.label :comment
+      = form.text_area :comment
+    =submit_tag 'Save'
+    / =link_to 'Cancel', :back      

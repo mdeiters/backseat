@@ -1,0 +1,10 @@
+  
+#image-code
+  %h3 Example of Image
+  %script{:src => "http://localhost:3000/interviews/#{params[:id]}.js?mode=image&user=matthew deiters"}
+
+#inline-code
+  %h3 Example of Image
+  %span{:id => "interview-#{params[:id]}"}
+    %script{:src => "http://localhost:3000/interviews/#{params[:id]}.js?mode=inline&user=matthew deiters"}
+  

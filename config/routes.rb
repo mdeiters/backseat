@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'interviews', :action => 'index'
-  map.resources :options, :responses, :interviews
+  map.resources :interviews, :has_many => :responses, :member => { :demo => :get }
 
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should

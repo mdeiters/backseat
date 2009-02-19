@@ -19,7 +19,6 @@ class InterviewsController < ApplicationController
     end    
   end
   alias :create :update 
-  
 
   def index
     @interviews = Interview.all

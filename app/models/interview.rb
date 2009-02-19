@@ -2,6 +2,9 @@ class Interview < ActiveRecord::Base
   has_many :responses
   has_many :options
   
+  validates_presence_of :question
+  validates_length_of :question, :maximum => 200
+  
   def option_attributes=(options_hash)
     self.options.clear
     options_hash.each do |option_hash|

@@ -1,11 +1,14 @@
 .interview{:id => dom_id(@interview)}
   =@interview.question
-  -@interview.options.each do |option|
-    #option{:id => dom_id(option)}= option.name
+  .description=@interview.description
+  .options
+    -@interview.options.each do |option|
+      #option{:id => dom_id(option)}= option.name
   .responses
     - if @interview.responses.empty?
       %p There are no responses to this question yet
     - else
+      #download= link_to '(download csv)', interview_responses_url(@interview, :format => 'csv')
       %table
         %tr
           %th='User'
@@ -14,3 +17,6 @@
         =render :partial => @interview.responses
   =link_to 'Edit', edit_interview_path(@interview)
   =link_to 'Back', :back
+  =link_to 'Demo', demo_interview_path(@interview)
+
+#preview

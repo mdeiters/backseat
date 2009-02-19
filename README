@@ -1,15 +1,19 @@
--- 
+== TODO
+  * support 'display' option (a=always or p=until particpated)
+  * implement lightbox version
+  * download data  
+  
 
-* Include badge inview
-* Include badge as popup
-* download data
+Enhancment Links
+  http://plugins.jquery.com/project/bgiframe
+  http://jquery.bassistance.de/tooltip/demo/
+  http://yensdesign.com/2008/09/how-to-create-a-stunning-and-smooth-popup-using-jquery/
+  http://commons.wikimedia.org/wiki/Crystal_Clear
   
   
-* pass in users name
-
-see tooltip
-click popup
-
-http://plugins.jquery.com/project/bgiframe
-http://jquery.bassistance.de/tooltip/demo/
-http://yensdesign.com/2008/09/how-to-create-a-stunning-and-smooth-popup-using-jquery/
+Document Badge
+  #mode=image
+  #mode=inline
+  #user=matthew deiters (any way to identify a user)
+  
+  only support jquery
