@@ -5,6 +5,8 @@ class Interview < ActiveRecord::Base
   validates_presence_of :question
   validates_length_of :question, :maximum => 200
   
+  #don't allow quotes or double quotes
+  
   def option_attributes=(options_hash)
     self.options.clear
     options_hash.each do |option_hash|

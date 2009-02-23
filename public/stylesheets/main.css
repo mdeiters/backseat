@@ -1,0 +1,5 @@
+.popup {
+	position: absolute;
+	display: none;
+	border-collapse: collapse;
+}

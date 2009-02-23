@@ -1,10 +1,21 @@
-  
+=javascript_include_tag 'jquery', 'jquery.minitip', 'jquery.bubble'
+/ %style="#tooltip{position:absolute;border:1px solid #333;background:#f7f5d1;padding:2px 5px;color:#333; display:none; }"
+/ %style=".bubbleInfo {position: relative;}"
+/ %style=".popup{position: absolute;  display: none; }"
+
+/ <span id="123" title="what do you think">
+/ %span{:id => 123}
+/ 
+/ <a onclick="$.ajax({data:'authenticity_token=' + encodeURIComponent('1334b8af5f84933f0e3b4d09cb033de5df3f3a53'), dataType:'script', type:'get', url:'http://localhost:3000/interviews/1/responses/new'}); return false;" href="#">
+/ </a>
+/ </span>   
 #image-code
   %h3 Example of Image
-  %script{:src => "http://localhost:3000/interviews/#{params[:id]}.js?mode=image&user=matthew deiters"}
+  %span{:id => "interview-#{params[:id]}-image"}
+    %script{:src => "http://localhost:3000/interviews/#{params[:id]}.js?mode=image&user=matthew deiters"}
 
 #inline-code
-  %h3 Example of Image
+  %h3 Example of Inline
   %span{:id => "interview-#{params[:id]}"}
     %script{:src => "http://localhost:3000/interviews/#{params[:id]}.js?mode=inline&user=matthew deiters"}
-  
+    

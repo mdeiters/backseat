@@ -1,8 +1,9 @@
 == TODO
   * support 'display' option (a=always or p=until particpated)
   * implement lightbox version
-  * download data  
-  
+  * download data
+  * add open id, user managed list  
+  * skip_jquery_include
 
 Enhancment Links
   http://plugins.jquery.com/project/bgiframe
@@ -15,5 +16,7 @@ Document Badge
   #mode=image
   #mode=inline
   #user=matthew deiters (any way to identify a user)
-  
   only support jquery
+  
+  http://rndnext.blogspot.com/2009/02/jquery-ajax-tooltip.html
+  

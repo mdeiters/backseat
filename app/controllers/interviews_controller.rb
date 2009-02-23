@@ -28,5 +28,6 @@ class InterviewsController < ApplicationController
   def load_interview
     @interview = params[:id] ? Interview.find(params[:id] ) : Interview.new
   end
-  
+
+  helper_method :render_to_string
 end

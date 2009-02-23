@@ -1,9 +1,40 @@
 case params[:mode]
   when 'image'
-    @html = link_to_remote(image_tag('http://localhost:3000/images/user_feedback.png'), 
-                               :url => new_interview_response_url(@interview),
-                               :method => :get)
+    # page << "$(document).ready(function() {"
+    # page << " $('#123').tooltip();"
+    # page << "});"
+    # {track: false, delay: 0, fade: 250}     
+    # @html = "<span >"
+      # $("#123").hover(
+      #   function () {
+      #     $(this).append($("<span> ***</span>"));
+      #   }, 
+      #   function () {
+      #     $(this).find("span:last").remove();
+      #   }
+      # );
+      	 
+    # @html = link_to_remote(image_tag('http://localhost:3000/images/user_feedback.png'),
+    #                            {:url => new_interview_response_url(@interview),
+    #                            :method => :get},
+    #                            :id => '123',
+    #                            :class => 'tooltip',
+    #                            :title => @interview.question)
+
+    @html = "<span class='bubbleInfo'>"
+    @html <<  "<span class='trigger'>"
+    @html <<    image_tag('http://localhost:3000/images/user_feedback.png')
+    @html <<  "</span>"
+    @html <<  "<div class='popup'>"
+    @html <<    @interview.question
+    @html <<  "</div>"
+    @html << "</span>"
+    # @html = render_to_string(:partial => 'responses/form').delete!('\n')
     page << "document.write(#{@html})"
+    
   when 'inline'
-    page.insert_html :top, "interview-#{params[:id]}", :partial => 'responses/form'
+    # page.insert_html :top, "interview-#{params[:id]}", :partial => 'responses/form'
+    @html = render(:partial => 'responses/form')
+    page << "document.write('#{@html}')"
+    
 end                        
