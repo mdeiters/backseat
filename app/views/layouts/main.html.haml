@@ -3,8 +3,10 @@
     = stylesheet_link_tag 'main'
     = javascript_include_tag :defaults
   %body
-    #header
-      Backseat is great
-    .text1
-      =yield
-    #footer
+    #wrapper
+      #header
+        Backseat is great
+      #content
+        .text1a
+          =yield
+      #footer

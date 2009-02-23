@@ -1,21 +1,28 @@
+
 -form_for @interview do |form|
-  %fieldset
+  .row
     = form.label :question
     = form.text_field :question
-  %fieldset
+    .clear
+  .row
     = form.label :description
     = form.text_area :description
-  %fieldset
+    .clear
+  .row
     = form.label :options
-    #interview_options
-      =render :partial => 'option', :collection => @interview.options, :locals => {:form => form}
-    #add_interivew_option
+    #add_interivew_option.option{:id => dom_id(Option.new)}
       =text_field_tag :option, '', :id => 'interview_option'
-      =button_to_function 'Add' do |page|
-        - page.insert_html :bottom, 'interview_options', :partial => 'option', :locals => { :option => Option.new, :form => form }
-        - page << "$('#interview_options input:last').val($('#interview_option').attr('value'));"
-        - page << "$('#interview_option').val('')"
-        - page << "$('#interview_option').focus()"
-  %fieldset
+      .add
+        =link_to_function 'Add Another Option' do |page|
+          - page.insert_html :bottom, 'all_options', :partial => 'option', :locals => { :option => Option.new, :form => form }
+          - page << "$('#all_options input:last').val($('#interview_option').attr('value'));"
+          - page << "$('#interview_option').val('')"
+          - page << "$('#interview_option').focus()"
+    #all_options
+      =render :partial => 'option', :collection => @interview.options, :locals => {:form => form}
+    .clear    
+  .button_row
     =submit_tag 'Save'
     =link_to 'Cancel', :back
+    .clear
+    

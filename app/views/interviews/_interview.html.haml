@@ -1,5 +1,7 @@
+
 .interview{:id => dom_id(interview)}
-  =link_to interview.question, interview_path(interview)
+  .title
+    =link_to interview.question, interview_path(interview)
   .options= interview.options.map(&:name).join(', ')
   .summary
     respones:

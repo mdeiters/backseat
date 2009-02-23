@@ -1,3 +1,4 @@
+
 .interview{:id => dom_id(@interview)}
   =@interview.question
   .description=@interview.description
@@ -15,8 +16,9 @@
           %th='Response'
           %th='Comment'
         =render :partial => @interview.responses
-  =link_to 'Edit', edit_interview_path(@interview)
-  =link_to 'Back', :back
-  =link_to 'Demo', demo_interview_path(@interview)
+  .controls
+    =link_to 'Edit', edit_interview_path(@interview)
+    =link_to 'Back', :back
+    =link_to 'Demo', demo_interview_path(@interview)
 
 #preview

@@ -2,6 +2,6 @@
   -form.fields_for(:option_attributes) do |fields|
     =fields.hidden_field '][id', :value => option.id
     =fields.text_field '][name', :value => option.name
-    %span
-      =link_to_function '[X] Delete' do |page|
+    .delete
+      =link_to_function 'Delete This Option' do |page|
         -page << "$(this).parents('.option').remove()"
