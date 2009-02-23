@@ -30,11 +30,9 @@ case params[:mode]
     @html <<  "</div>"
     @html << "</span>"
     # @html = render_to_string(:partial => 'responses/form').delete!('\n')
-    page << "document.write(#{@html})"
+    page << "document.write(<span>#{@html}</span>)"
     
   when 'inline'
     # page.insert_html :top, "interview-#{params[:id]}", :partial => 'responses/form'
-    @html = render(:partial => 'responses/form')
-    page << "document.write('#{@html}')"
-    
+    page << "document.write(<span>#{render(:partial => 'responses/form')}</span>)"
 end                        
