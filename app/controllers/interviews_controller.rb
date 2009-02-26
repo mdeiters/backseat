@@ -1,6 +1,6 @@
 class InterviewsController < ApplicationController
   
-  before_filter :load_interview, :excep => [:index]
+  before_filter :load_interview, :except => [:index]
   
   def edit
     render :action => :new

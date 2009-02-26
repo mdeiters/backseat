@@ -37,9 +37,3 @@ ul            {margin:  0 0 0 0; padding: 0 0 0 0;}
 .add           		{padding: 4px 0;}
 .delete a         {font-weight: bold;}
 .add a         		{font-weight: bold;}
-
-.popup {
-	position: absolute;
-	display: none;
-	border-collapse: collapse;
-}

@@ -14,8 +14,7 @@ $(function () {
         var trigger = $('.trigger', this);
         var info = $('.popup', this).css('opacity', 0);
 
-
-        $([trigger.get(0), info.get(0)]).mouseover(function (e) {
+				show_function = function (e) {
             if (hideDelayTimer) clearTimeout(hideDelayTimer);
             if (beingShown || shown) {
                 // don't trigger the animation again
@@ -40,7 +39,9 @@ $(function () {
             }
 
             return false;
-        }).mouseout(function () {
+        };
+
+				hide_function = function () {
             if (hideDelayTimer) clearTimeout(hideDelayTimer);
             hideDelayTimer = setTimeout(function () {
                 hideDelayTimer = null;
@@ -53,8 +54,10 @@ $(function () {
                 });
 
             }, hideDelay);
-
             return false;
-        });
+        };
+				
+
+        $([trigger.get(0), info.get(0)]).mouseover(show_function).mouseout(hide_function);
     });
 });

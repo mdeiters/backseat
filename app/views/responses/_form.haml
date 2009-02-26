@@ -1,4 +1,5 @@
-%response
+/ALLAN: my idea is to have consumers of this include the client.css, this form shows up in their application and should be styled in the client.css
+.response
   .welcome= "Tell us what you think #{params[:user]}" if params[:user]
   .question= "#{@interview.question} ?"
   .description= @interview.description unless @interview.description.blank?
@@ -9,8 +10,8 @@
       .row
         -@interview.options.each do |option|
           #option{:id => dom_id(option)}
-            =option.name
             =form.radio_button :value, option.name
+            =option.name
         .clear
     .row
       =form.label :comment
@@ -19,4 +20,4 @@
     .button_row
       =submit_tag 'Save'
       .clear
-    %h1='hi'
+
