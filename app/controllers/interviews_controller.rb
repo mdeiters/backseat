@@ -13,7 +13,7 @@ class InterviewsController < ApplicationController
   def update
     @interview.update_attributes(params[:interview])
     if @interview.save
-      redirect_to interviews_url
+      redirect_to interview_url(@interview)
     else
       render :edit
     end    

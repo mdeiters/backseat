@@ -1,3 +1,5 @@
+%h2 Login to Backseat
+
 -form_tag(session_url) do
   =image_tag 'google.gif'
   =hidden_field_tag 'provider', 'Google'
@@ -9,6 +11,7 @@
     = submit_tag 'Sign in', :disable_with => "Signing in&hellip;"
     .clear
     
+%h3 or
     
 -form_tag(session_url) do
   =image_tag 'yahoo.gif'

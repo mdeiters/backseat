@@ -1,4 +1,3 @@
-
 -form_for @interview do |form|
   .row
     = form.label :question
@@ -22,7 +21,7 @@
       =render :partial => 'option', :collection => @interview.options, :locals => {:form => form}
     .clear    
   .button_row
-    =submit_tag 'Save'
+    =submit_tag 'Save and get html'
     =link_to 'Cancel', :back
     .clear
     

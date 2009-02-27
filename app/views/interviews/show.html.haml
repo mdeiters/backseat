@@ -1,4 +1,3 @@
-
 .interview{:id => dom_id(@interview)}
   =@interview.question
   .description=@interview.description
@@ -18,7 +17,28 @@
         =render :partial => @interview.responses
   .controls
     =link_to 'Edit', edit_interview_path(@interview)
-    =link_to 'Back', :back
-    =link_to 'Demo', demo_interview_path(@interview)
+    =link_to 'All your interviews', interviews_path
 
-#preview
+%h2 Next...
+
+%h3 1. Copy and paste this html to any page you want to include interview questions on
+=stylesheet_link_tag 'backseat-client'
+=javascript_include_tag 'jquery', 'jquery.minitip', 'jquery.bubble', 'jquery.dimensions', 'jquery.thickbox', :cache => 'backseat-client'
+%pre
+  =h stylesheet_link_tag "backseat-client"
+%pre
+  =h javascript_include_tag 'jquery', 'jquery.minitip', 'jquery.bubble', 'jquery.dimensions', 'jquery.thickbox', :cache => 'backseat-client'
+  
+%h3 2. Copy and paste this html where you want the question to appear
+
+%h4 As an image
+%pre
+  =h(javascript_include_tag(interview_javascript_badge('image'))).gsub('&amp;', '&')
+.example
+  =javascript_include_tag(interview_javascript_badge('image'))
+
+%h4 Inline as a form
+%pre
+  =h(javascript_include_tag(interview_javascript_badge('inline'))).gsub('&amp;', '&')
+.example
+  =javascript_include_tag(interview_javascript_badge('inline'))

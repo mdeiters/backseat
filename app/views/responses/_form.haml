@@ -1,5 +1,5 @@
 /ALLAN: my idea is to have consumers of this include the client.css, this form shows up in their application and should be styled in the client.css
--form_for [@interview, Response.new] do |form|
+-form_for [@interview, Response.new], :url => interview_responses_url(@interview) do |form|
   = hidden_field_tag :interview_id, @interview.id
   = hidden_field_tag 'response[user]', params[:user]
   -unless @interview.options.empty?
@@ -14,6 +14,6 @@
     =form.text_area :comment
     .clear
   .button_row
-    =submit_tag 'Save'
+    =submit_to_remote 'Save', 'Save'
     .clear
 

@@ -17,8 +17,17 @@ class ResponsesController < ApplicationController
   def create
     @response = @interview.responses.build(params[:response])
     if @response.save
-      flash[:notice] = 'Thank you for participating.'
-      redirect_to interview_url(@interview)
+      respond_to do |format|
+        # format.js {
+        #   update_page do |page|
+        #     page.alert('hi')
+        #   end
+        # }
+        format.html {
+          flash[:notice] = 'Thank you for participating.'
+          redirect_to interview_url(@interview)
+        }
+      end      
     else
       render :action => :new
     end
