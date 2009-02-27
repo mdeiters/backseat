@@ -256,8 +256,10 @@ $.fn.extend({
 	 * @cat Plugins/Dimensions
 	 */
 	position: function(options, returnObject) {
-		var elem = this[0], parent = elem.parentNode, op = elem.offsetParent,
-		    options = $.extend({ margin: false, border: false, padding: false, scroll: false }, options || {}),
+		var elem = this[0];
+		var parent = elem.parentNode;
+		var op = elem.offsetParent;
+		var options = $.extend({ margin: false, border: false, padding: false, scroll: false }, options || {}),
 			x = elem.offsetLeft,
 			y = elem.offsetTop, 
 			sl = elem.scrollLeft, 

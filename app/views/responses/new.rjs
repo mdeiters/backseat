@@ -1,8 +1,7 @@
 case params[:mode].to_sym
   when :image
     page << "badge = '#{escape_for_document_write(render(:partial => 'responses/image'))}';"
-    page << "document.write(badge);"
   when :inline
     page << "badge = '#{escape_for_document_write(render(:partial => 'responses/inline'))}';"
-    page << "document.write(badge);"
 end
+page << "document.write(badge);"

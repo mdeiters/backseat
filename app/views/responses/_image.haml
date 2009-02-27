@@ -1,3 +1,10 @@
-%span.bubbleInfo
+%a.thickbox.tooltip{:href => "#TB_inline?inlineId=#{dom_id(@interview)}" }
   %span.trigger=image_tag('http://localhost:3000/images/user_feedback.png')
-  %span.popup=render(:partial => 'responses/form')
+  %span.popup
+    .question
+      /we probably want this question with some padding so that its easy to hover
+      ="#{@interview.question} ? click to participate"
+    .reponse{:id => dom_id(@interview), :style => 'display:none;'}
+      .question= "#{@interview.question} ?"
+      .description= @interview.description unless @interview.description.blank?
+      =render(:partial => 'responses/form')

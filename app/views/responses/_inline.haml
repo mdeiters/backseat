@@ -1,1 +1,5 @@
-=render(:partial => 'responses/form')
+.response
+  .welcome= "Tell us what you think #{params[:user]}" if params[:user]
+  .question= "#{@interview.question} ?"
+  .description= @interview.description unless @interview.description.blank?
+  =render(:partial => 'responses/form')
