@@ -9,13 +9,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090217195907) do
+ActiveRecord::Schema.define(:version => 20090227221127) do
 
   create_table "interviews", :force => true do |t|
     t.string   "question"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "open_id_authentication_associations", :force => true do |t|
+    t.integer "issued"
+    t.integer "lifetime"
+    t.string  "handle"
+    t.string  "assoc_type"
+    t.binary  "server_url"
+    t.binary  "secret"
+  end
+
+  create_table "open_id_authentication_nonces", :force => true do |t|
+    t.integer "timestamp",  :null => false
+    t.string  "server_url"
+    t.string  "salt",       :null => false
   end
 
   create_table "options", :force => true do |t|
@@ -30,6 +46,12 @@ ActiveRecord::Schema.define(:version => 20090217195907) do
     t.string   "user"
     t.string   "value"
     t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "identity_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

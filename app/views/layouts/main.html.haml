@@ -6,7 +6,10 @@
     #wrapper
       #header
         Backseat is great
+      #message=flash[:message] if flash[:message]
+      #error=flash[:error] if flash[:error]
       #content
+        =link_to 'logout', session_url, :method => :delete if logged_in?
         .text1a
           =yield
       #footer

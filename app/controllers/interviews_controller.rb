@@ -21,12 +21,12 @@ class InterviewsController < ApplicationController
   alias :create :update 
 
   def index
-    @interviews = Interview.all
+    @interviews = current_user.interviews
   end
   
   private
   def load_interview
-    @interview = params[:id] ? Interview.find(params[:id] ) : Interview.new
+    @interview = params[:id] ? current_user.interviews.find(params[:id] ) : current_user.interviews.build
   end
 
   helper_method :render_to_string
