@@ -1,6 +1,6 @@
 %a.thickbox.tooltip{:href => "#TB_inline?inlineId=#{ask_dom_id(@interview)}" }
-  %span.trigger=image_tag('http://localhost:3000/images/user_feedback.png')
-  %span.popup
+  %span.trigger=image_tag('user_feedback.png')
+  %span.popup{:style => 'display:none;'}
     .question
       /we probably want this question with some padding so that its easy to hover
       ="#{@interview.question} ? click to participate"
