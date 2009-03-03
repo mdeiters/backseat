@@ -1,4 +1,5 @@
-#create
-  = "#{@interviews.size} interviews, #{link_to('create', new_interview_path)} another one?"
+=content_for :banner do 
+  #create
+    = "#{@interviews.size} interviews, #{link_to('create', new_interview_path)} another one?"
 #main
   = render :partial => @interviews
