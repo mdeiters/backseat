@@ -1,20 +1,24 @@
-body 				{font-family: arial, helvetica, verdana, sans-serif;  margin: 0px auto; padding: 0px; color: #333; text-align: center; font-size: 12px; line-height: 130%;}
+body 				{font-family: arial, helvetica, verdana, sans-serif;  background: url(/images/bg.png) repeat-x;margin: 0px auto; padding: 0px; color: #333; text-align: center; font-size: 12px; line-height: 130%;}
 div, img, form, ul 	{margin: 0px; padding: 0px; border: 0px; text-align: left;}
 .left 				{float: left;}	
 .tr, div.tr, 
 div span.tr           {text-align: right;}
 .right 				{float: right; }	
-a 					{text-decoration: underline; color: #006c95;}
+a 					{text-decoration: underline; color: #3d89b0;}
 a:hover 			{text-decoration: none; }
 .clear 				{clear: both;}
 #wrapper      {margin: 0px auto; width: 968px; padding: 0 0 0 0; }	
-#header       {background: #eee; font-size: 17px; padding: 10px; font-weight: bold;}
+#header       {}
 .title        {font-weight: bold; font-size: 13px;}
 
-h1            {font-size: 25px; border-bottom: 1px solid #ccc; padding: 0 0 10px 0; margin: 30px 0 20px 0;}
-#content      {padding: 10px 0;}
-#create       {padding: 0 10px 10px 10px; border-bottom: 1px solid #ccc; font-weight: bold;}
+h1            {font-size: 25px;  border-bottom: 1px solid #ccc; padding: 0 0 10px 0; margin: 30px 0 20px 0;}
+#content      {padding: 0 0; }
+#create       {padding: 15px; text-align: right; background: url(/images/yellow_bg.png) repeat-x 0 -20px; border-bottom: 1px solid #ccc; font-weight: bold; font-size: 13px;}
+#create a     {background: #3d89b0; color: white; padding: 5px; text-decoration: none;}
 .interview    {border-bottom: 1px solid #ccc; padding: 10px;}
+
+#big_column       {width: 59%; min-height: 300px; height:auto !important; height:300px; border: 1px solid #333; float: left;}
+#small_column     {width: 39%; border: 1px solid #333; float: right;}
 
 .controls a   {margin-right: 5px; font-weight: bold;}
 
@@ -23,19 +27,26 @@ input, text, select {font-family: arial;}
 .row input,
 .row select,
 .row textarea			{width: 400px; padding: 3px; border-top:1px solid #7c7c7c; border-left:1px solid #c3c3c3; border-right:1px solid #c3c3c3; border-bottom:1px solid #ddd; background:#fff url(/images/fieldbg.gif) repeat-x top;}
-ul            {margin:  0 0 0 0; padding: 0 0 0 0;}
+ul                {margin:  0 0 0 0; padding: 0 0 0 0;}
 
+#logo             {background: #222; padding: 10px; float: left;}
+#tagline          {margin: 22px 0 0 10px; font-size: 15px; font-weight: bold;}
+#subnav a         {font-size: 13px; font-weight: bold; margin-left: 10px;}
+#subnav           {margin: 22px 15px 0 0;}
+#main             {padding: 20px 0;}
 
 .row, .button_row          {padding: 5px 0; }
 .button_row input {font-size: 13px; background: #0368a0; padding: 7px; color: white; font-weight: bold; border: 2px solid #ccc; margin-right: 5px; } 
 .button_row input:hover {background: #047bbd; cursor: pointer; color: #ddd;} 
-.button_row a   {font-weight: bold; text-decoration: underline;}
+.button_row a     {font-weight: bold; text-decoration: underline;}
 .button_row a:hover   {text-decoration: none;}
-.add input {width: auto; font-size: 12px; border: none; background: none; text-decoration: underline; font-weight: bold; color: #006c95;}
-.option         {padding:  10px 0 0 100px;}
+.add input        {width: auto; font-size: 12px; border: none; background: none; text-decoration: underline; font-weight: bold; color: #006c95;}
+.option           {padding:  10px 0 0 100px;}
 .delete           {padding: 4px 0;}
 .add           		{padding: 4px 0;}
 .delete a         {font-weight: bold;}
 .add a         		{font-weight: bold;}
 
 .hide {display: none;}
+
+#footer           {border-top: 1px solid #ccc; padding: 15px 0;}

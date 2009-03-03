@@ -5,11 +5,24 @@
   %body
     #wrapper
       #header
-        Backseat is great
+        #logo
+          =image_tag 'logo_white.png'
+        #tagline.left
+          Get feedback from your users!  
+        #subnav.right
+          =link_to 'All Interviews', '/'
+          =link_to 'Logout', session_url, :method => :delete if logged_in?          
+        .clear  
       #message=flash[:message] if flash[:message]
       #error=flash[:error] if flash[:error]
       #content
-        =link_to 'logout', session_url, :method => :delete if logged_in?
-        .text1a
+        #banner 
+          =yield :banner
+        #big_column
           =yield
+        #small_column 
+          =yield :small 
+        .clear  
       #footer
+        If you're enjoying this open source app, please recommend me at 
+        =link_to 'WorkingWithRails', 'http://www.workingwithrails.com/person/8183-matthew-deiters'
