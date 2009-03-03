@@ -17,8 +17,8 @@ h1            {font-size: 25px;  border-bottom: 1px solid #ccc; padding: 0 0 10p
 #create a     {background: #3d89b0; color: white; padding: 5px; text-decoration: none;}
 .interview    {border-bottom: 1px solid #ccc; padding: 10px;}
 
-#big_column       {width: 59%; min-height: 300px; height:auto !important; height:300px; border: 1px solid #333; float: left;}
-#small_column     {width: 39%; border: 1px solid #333; float: right;}
+#big_column       {width: 59%; padding-top: 15px; min-height: 300px; height:auto !important; height:300px; border: 1px solid #333; float: left;}
+#small_column     {width: 39%; padding-top: 15px;  border: 1px solid #333; float: right;}
 
 .controls a   {margin-right: 5px; font-weight: bold;}
 
