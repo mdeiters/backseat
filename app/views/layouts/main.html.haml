@@ -10,8 +10,10 @@
         #tagline.left
           Get feedback from your users!  
         #subnav.right
-          =link_to 'All Interviews', '/'
-          =link_to 'Logout', session_url, :method => :delete if logged_in?          
+          - if logged_in?
+            =link_to 'My Interviews', interviews_url
+            |
+            =link_to 'Logout', session_url, :method => :delete
         .clear  
       #message=flash[:message] if flash[:message]
       #error=flash[:error] if flash[:error]

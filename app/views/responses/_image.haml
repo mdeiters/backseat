@@ -1,10 +1,10 @@
-%a.thickbox.tooltip{:href => "#TB_inline?inlineId=#{ask_dom_id(@interview)}" }
+- id = Object.new.object_id
+%a.facebox{:href => "##{ask_dom_id(@interview)}", :id => id}
   %span.trigger=image_tag('user_feedback.png')
-  %span.popup{:style => 'display:none;'}
-    .question
-      /we probably want this question with some padding so that its easy to hover
-      ="#{@interview.question} ? click to participate"
-    .reponse{:id => ask_dom_id(@interview), :style => 'display:none;'}
-      .question= "#{@interview.question} ?"
-      .description= @interview.description unless @interview.description.blank?
-      =render(:partial => 'responses/form')
+  .reponse{:id => ask_dom_id(@interview), :style => 'display:none;'}
+    .question= "#{@interview.question} ?"
+    .description= @interview.description unless @interview.description.blank?
+    =render(:partial => 'responses/form')
+%script
+  jQuery(document).ready(function() {jQuery('a[class*=facebox]').facebox()}); 
+  ="jQuery(document).ready(function() {jQuery('##{id}').simpletip({content:'#{@interview.question}? Click to Participate'})});"

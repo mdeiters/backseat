@@ -20,8 +20,8 @@ class ResponsesController < ApplicationController
       respond_to do |format|
         format.js {
           render :update do |page|
-            # page.alert('Thank you for participating.')
-            page.call 'tb_remove'
+            # page << "jQuery(document).trigger('close.facebox')"
+            page << "jQuery.facebox('Thanks for participating')"
           end
         }
         format.html {

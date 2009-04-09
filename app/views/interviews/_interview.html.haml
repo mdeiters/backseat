@@ -1,8 +1,7 @@
-
 .interview{:id => dom_id(interview)}
   .title
     =link_to interview.question, interview_path(interview)
-  .options= interview.options.map(&:name).join(', ')
+  .options= humanize_options(interview)
   .summary
     respones:
     = interview.responses.size
